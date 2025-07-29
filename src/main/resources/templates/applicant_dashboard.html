@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Applicant Dashboard</title>
+        <link rel="stylesheet" href="/css/applicant_dashboard.css">
+        <script src="/js/applicant_dashboard.js" defer></script>
+    </head>
+    <body>
+
+        <div id="sidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
+            <a th:href="@{/applicant/applicant_dashboard}">Home</a>
+            <a th:href="@{/jobs/apply_jobs}">View Available Jobs</a>
+            <a th:href="@{/applications/track_status}">My Applications</a>
+            <a th:href="@{/applicant/profile}">Profile</a>
+            <a th:href="@{/login}">Logout</a>
+        </div>
+
+        <div class="topbar">
+            <span class="menu-icon" onclick="toggleSidebar()">☰</span>
+            <span class="logo">Jay<span style="color: red">Swaminarayan</span></span>
+            </div>
+        </div>
+
+        <div class="main-content">
+<!--            <h1>Applications</h1>-->
+<!--            <div class="tabs">
+                <button class="tab active">Active (0)</button>
+                <button class="tab">Archived (0)</button>
+            </div>-->
+            <div class="message">
+<!--                <p>Sorry, we don't have any active applications for you. To find a job, search for jobs at the link below.</p>-->
+                <a th:href="@{/jobs/apply_jobs}"><button class="search-btn">Search jobs</button></a>
+            </div>
+        </div>
+        
+    </body>
+</html>
+
+
+
+<!--<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Applicant Dashboard</title>
+    <link rel="stylesheet" href="/css/applicant_dashboard.css">
+    <script src="/js/applicant_dashboard.js" defer></script>
+</head>
+<body>
+
+     Sidebar 
+    <div class="sidebar">
+        <h3>Applicant Panel</h3>
+        <a th:href="@{/applicant/applicant_dashboard}">Dashboard</a>
+        <a th:href="@{/jobs/apply_jobs}">View Available Jobs</a>
+        <a th:href="@{/applications/track_status}">My Applications</a>
+        <a href="#">Profile</a>
+        <a th:href="@{/logout}">Logout</a>
+    </div>
+
+     Topbar 
+    <div class="topbar">
+        <span class="toggle-btn" onclick="toggleSidebar()">☰</span>
+        <h2>Applicant Dashboard</h2>
+        <span th:text="'Welcome, ' + ${#authentication.username}"></span>
+    </div>
+
+     Main Content 
+    <div class="main-content">
+        <div class="card">
+            <h3>Recent Activity</h3>
+            <p th:if="${applications == null || applications.empty}">
+                No recent job applications.
+            </p>
+            <ul th:if="${applications != null}" th:each="app : ${applications}">
+                <li>
+                    <strong th:text="${app.job.title}"></strong> at
+                    <span th:text="${app.job.company}"></span> —
+                    <em th:text="${app.status}"></em>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>-->
+
+
+

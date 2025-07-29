@@ -1,0 +1,165 @@
+/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f0f2f5;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background: #222d32;
+    color: white;
+    position: fixed;
+    padding-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #1a2226;
+}
+
+.topbar {
+    margin-left: 220px;
+    height: 60px;
+    background: #3c8dbc;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    justify-content: space-between;
+    transition: margin-left 0.3s ease;
+}
+
+.toggle-btn {
+    font-size: 24px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+Collapsed
+.collapsed .sidebar {
+    transform: translateX(-100%);
+}
+
+.collapsed .topbar,
+.collapsed .main-content {
+    margin-left: 0;
+}
+
+.job-box {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+.job-box h4 {
+    margin: 0;
+    color: #333;
+}
+.job-box a {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    background-color: #007bff;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.job-box a:hover {
+    background-color: #0056b3;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.profile-circle img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+*/
+
+body {
+    background-color: #f8f9fa;
+}
+.sidebar {
+    min-height: 100vh;
+    background-color: #212529;
+    color: white;
+}
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+.sidebar a:hover {
+    background-color: #343a40;
+}
+.job-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+.job-card h5 {
+    margin-bottom: 10px;
+}
+.topbar {
+    background-color: #0d6efd;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+
+

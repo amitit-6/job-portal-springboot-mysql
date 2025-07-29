@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Applications</title>
+    <link rel="stylesheet" href="/css/track_status.css" />
+</head>
+<body>
+    <h2>My Applications</h2>
+
+    <div class="applications-grid">
+        <div class="app-card" th:each="app : ${applications}">
+            <div class="job-title" th:text="${app.job.title}">Java Developer</div>
+            <div class="company" th:text="${app.job.company}">TechNova Solutions</div>
+            <div class="status-badge" th:text="${app.status}"
+                 th:class="'status-badge status-' + ${app.status}">
+                APPLIED
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!--<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Application Status</title>
+    <link rel="stylesheet" href="/css/track_status.css">
+</head>
+<body>
+    <h2>My Applications</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="app : ${applications}">
+                <td th:text="${app.job.title}"></td>
+                <td th:text="${app.job.company}"></td>
+                <td th:text="${app.status}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Application Status</title>
+    <link rel="stylesheet" href="/css/track_status.css">
+</head>
+<body>
+    <h2>My Applications</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Status</th>
+                <th>Applied At</th>
+                <th>Last Updated</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="app : ${applications}">
+                <td th:text="${app.job.title}"></td>
+                <td th:text="${app.job.company}"></td>
+                <td th:text="${app.status}"></td>
+                <td th:text="${#temporals.format(app.appliedAt, 'yyyy-MM-dd HH:mm')}"></td>
+                <td th:text="${#temporals.format(app.updatedAt, 'yyyy-MM-dd HH:mm')}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>-->

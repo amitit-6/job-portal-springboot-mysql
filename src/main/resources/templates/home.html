@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    </head>
+    <body>
+        <div class="container">
+            <h2>Available Jobs</h2>
+            <ul>
+                <li th:each="job : ${jobs}">
+                    <div>
+                        <b th:text="${job.title}"></b>
+                        <span th:text="${job.company}"></span>
+                    </div>
+                    <a th:href="@{/jobs/apply/{id}(id=${job.id})}">Apply</a>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

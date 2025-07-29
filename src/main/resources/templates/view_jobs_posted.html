@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Posted Jobs</title>
+    <link rel="stylesheet" href="/css/view_jobs_posted.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Jobs You Have Posted</h2>
+        <div class="job-list" th:each="job : ${jobList}">
+            <div class="job-card">
+                <h3 th:text="${job.title}">Job Title</h3>
+                <p><strong>Company:</strong> <span th:text="${job.company}"></span></p>
+                <p><strong>Location:</strong> <span th:text="${job.location}"></span></p>
+                <p><strong>Experience:</strong> <span th:text="${job.experience}"></span></p>
+                <p><strong>Description:</strong> <span th:text="${job.description}"></span></p>
+                <a th:href="@{'/employer/applicants/' + ${job.id}}">View Applicants</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

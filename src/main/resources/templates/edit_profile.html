@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Edit Profile</title>
+        <link rel="stylesheet" href="/css/edit_profile.css">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Edit Your Profile</h2>
+            <form th:action="@{/applicant/update_profile}" method="post" enctype="multipart/form-data">
+                <label>Username:</label>
+                <input type="text" name="name" th:value="${user.name}" required />
+                <label>Email:</label>
+                <input type="email" name="email" th:value="${user.username}" required />
+                <label>Password:</label>
+                <input type="password" name="password" th:value="${user.password}" placeholder="Leave blank to keep current password"/>
+
+                <label>Upload Profile Picture:</label>
+                <input type="file" name="profileImage" accept="image/*" />
+
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </body>
+</html>
+
+<!--            <form th:action="@{/applicant/update_profile}" th:object="${user}" method="post">
+                <label>Full Name:</label>
+                <input type="text" th:field="*{name}" required>
+
+                <label>Email:</label>
+                <input type="email" th:field="*{username}" readonly>
+
+                <label>Password:</label>
+                <input type="password" th:field="*{password}" placeholder="Leave blank to keep current password">
+
+                <button type="submit">Update Profile</button>
+            </form>-->

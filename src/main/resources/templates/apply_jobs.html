@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Available Jobs</title>
+        <link rel="stylesheet" href="/css/apply_jobs.css">
+        <script src="/js/apply_jobs.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h2>Available Jobs</h2>
+<!--            <div class="welcome-section">
+                <img class="profile-pic" th:src="@{/images/profile.jpeg}" alt="Profile">
+                <span class="welcome-text" th:text="'Welcome, ' + ${applicant.username}">Welcome, User</span>
+            </div>-->
+        </header>
+
+        <div th:if="${appliedSuccess}" class="alert success">
+            ✅ Successfully applied! Redirecting to your dashboard...
+        </div>
+        <div th:if="${alreadyApplied}" class="alert warning">
+            ❌ You have already applied to this job.
+        </div>
+
+        <div class="search-bar">
+            <input id="jobSearch" type="text" placeholder="Search job by title or company...">
+        </div>
+
+        <div class="job-grid">
+            <div class="job-card" th:each="job : ${jobList}">
+                <div>
+                    <div class="job-title" th:text="${job.title}">Job Title</div>
+                    <div class="job-detail"><strong>Company:</strong> <span th:text="${job.company}"></span></div>
+                    <div class="job-detail"><strong>Location:</strong> <span th:text="${job.location}"></span></div>
+                    <div class="job-detail"><strong>Experience:</strong> <span th:text="${job.experience}"></span></div>
+                    <div class="job-detail"><strong>Job Type:</strong> <span th:text="${job.jobType}"></span></div>
+                    <div class="job-detail"><strong>Last Date:</strong> <span th:text="${job.lastDate}"></span></div>
+                    <div class="job-description"><strong>Description:</strong> <span th:text="${job.description}"></span></div>
+                </div>
+                <form th:action="@{/jobs/apply/{id}(id=${job.id})}" method="get">
+                    <button class="apply-btn" type="submit">Apply</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Apply for Jobs</title>
+        <link rel="stylesheet" href="/css/apply_jobs.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <h2>Available Jobs</h2>
+
+            <div th:if="${appliedSuccess}" class="alert success">
+                ✅ Successfully applied! Redirecting to your dashboard...
+            </div>
+
+            <div th:if="${alreadyApplied}" class="alert warning">
+                ❌ You have already applied to this job.
+            </div>
+
+            <div class="job-list">
+                <div class="job-card" th:each="job : ${jobList}">
+
+                    <h3 th:text="${job.title}">Job Title</h3>
+                    <p><strong>Company:</strong> <span th:text="${job.company}">Company Name</span></p>
+                    <p><strong>Location:</strong> <span th:text="${job.location}">City</span></p>
+                    <p><strong>Experience:</strong> <span th:text="${job.experience}">0+ years</span></p>
+                    <p><strong>Job Type:</strong> <span th:text="${job.jobType}"></span></p>
+                    <p><strong>Last Date:</strong> <span th:text="${job.lastDate}"></span></p>
+                    <p><strong>Description:</strong> <span th:text="${job.description}">Description</span></p>
+
+                    <form th:action="@{/jobs/apply/{id}(id=${job.id})}" method="get">
+                        <button type="submit">Apply</button>            
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const successAlert = document.querySelector(".alert.success");
+                const warningAlert = document.querySelector(".alert.warning");
+
+                if (successAlert) {
+                    setTimeout(() => {
+                        window.location.href = "/applicant/applicant_dashboard";
+                    }, 2000); 
+                }
+
+                if (warningAlert) {
+                    setTimeout(() => {
+                        window.location.href = "/jobs/apply_jobs";
+                    }, 2000); 
+                }
+            });
+        </script>
+
+    </body>
+</html>-->
+
+
+
+<!--<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Apply for Jobs</title>
+    <link rel="stylesheet" href="/css/apply_jobs.css">
+</head>
+<body>
+    <div class="main-container">
+        <h2>Available Jobs</h2>
+
+        <div th:if="${jobList.empty}">
+            <p>No jobs available at the moment.</p>
+        </div>
+
+        <div class="job-list">
+            <div class="job-card" th:each="job : ${jobList}">
+                <h3 th:text="${job.title}">Job Title</h3>
+                <p><strong>Company:</strong> <span th:text="${job.company}">Company Name</span></p>
+                <p><strong>Location:</strong> <span th:text="${job.location}">City</span></p>
+                <p><strong>Experience:</strong> <span th:text="${job.experience}">0+ years</span></p>
+                <p><strong>Job Type:</strong> <span th:text="${#strings.capitalize(job.jobType.name().toLowerCase())}"></span></p>
+                <p><strong>Last Date:</strong> <span th:text="${job.lastDate}"></span></p>
+                <p><strong>Description:</strong> <span th:text="${job.description}">Description</span></p>
+
+                <form th:action="@{/jobs/apply/{id}(id=${job.id})}" method="get">
+                    <button type="submit">Apply</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>-->

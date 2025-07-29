@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>My Profile</title>
+        <link rel="stylesheet" href="/css/profile.css">
+    </head>
+    <body>
+        <div class="profile-box">
+            <h2>My Profile</h2>
+
+            <div th:if="${param.updated}" class="success-message">
+                Profile updated successfully!
+            </div>
+
+            <div class="profile-image">
+                <img th:src="${user.profilePicture != null ? user.profilePicture : '/uploads/'}" alt="Profile Picture" />
+            </div>
+
+            <p><strong>Username:</strong> <span th:text="${user.username}">Username</span></p>
+            <p><strong>Password:</strong> ********</p>
+            <p><strong>Role:</strong> <span th:text="${user.role}">APPLICANT</span></p>
+
+            <a th:href="@{/applicant/edit_profile}">Edit Profile</a>
+        </div>
+    </body>
+</html>

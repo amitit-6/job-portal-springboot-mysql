@@ -1,0 +1,119 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f3f3f3;
+    padding: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.app-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.app-card:hover {
+    transform: translateY(-4px);
+}
+
+.job-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.company {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+.status-badge {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.status-APPLIED {
+    background-color: #3498db;
+}
+
+.status-SHORTLISTED {
+    background-color: #27ae60;
+}
+
+.status-REJECTED {
+    background-color: #e74c3c;
+}
+
+.status-HIRED {
+    background-color: #2ecc71;
+}
+
+
+/*body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.status-container {
+    max-width: 900px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.status-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.status-table th,
+.status-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.status-table th {
+    background-color: #f0f0f0;
+}
+
+.status-applied {
+    color: #007bff;
+    font-weight: bold;
+}
+.status-hired {
+    color: green;
+    font-weight: bold;
+}
+.status-rejected {
+    color: red;
+    font-weight: bold;
+}*/
+
